@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shruthi Sirigineedi | QA Automation Architect — Built to Break Limits</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
@@ -1771,6 +1772,64 @@
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 3500);
   }
+
+  // ── VISITOR NOTIFICATION via EmailJS ──
+  (function() {
+    emailjs.init('rDutWfTUv3_kvvJHu');
+
+    // Only notify once every 24 hours per browser to avoid spam
+    const LAST_NOTIF_KEY = 'portfolio_notif_sent';
+    const lastSent = localStorage.getItem(LAST_NOTIF_KEY);
+    const now = Date.now();
+    if (lastSent && (now - parseInt(lastSent)) < 24 * 60 * 60 * 1000) return;
+
+    // Detect device type
+    const ua = navigator.userAgent;
+    let device = 'Desktop';
+    if (/Mobi|Android/i.test(ua)) device = 'Mobile';
+    else if (/Tablet|iPad/i.test(ua)) device = 'Tablet';
+
+    // Get browser name
+    let browser = 'Unknown Browser';
+    if (ua.includes('Chrome') && !ua.includes('Edg')) browser = 'Chrome';
+    else if (ua.includes('Safari') && !ua.includes('Chrome')) browser = 'Safari';
+    else if (ua.includes('Firefox')) browser = 'Firefox';
+    else if (ua.includes('Edg')) browser = 'Edge';
+
+    const deviceInfo = device + ' / ' + browser;
+    const referrer = document.referrer ? document.referrer : 'Direct visit (no referrer)';
+    const visitTime = new Date().toLocaleString('en-US', {
+      timeZone: 'America/Chicago',
+      dateStyle: 'full', timeStyle: 'short'
+    });
+
+    // Fetch approximate location via IP, then send email
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(loc => {
+        const city    = loc.city    || 'Unknown City';
+        const region  = loc.region  || '';
+        const country = loc.country_name || 'Unknown Country';
+
+        return emailjs.send('service_liq94n9', 'template_o33cbjb', {
+          visit_time : visitTime,
+          city       : city,
+          region     : region,
+          country    : country,
+          device     : deviceInfo,
+          referrer   : referrer,
+          name       : 'Portfolio Visitor',
+          message    : 'A recruiter or visitor just opened your portfolio!',
+          email      : 'noreply@portfolio-tracker.com'
+        });
+      })
+      .then(() => {
+        localStorage.setItem(LAST_NOTIF_KEY, now.toString());
+      })
+      .catch(() => {
+        // Silently fail — visitor experience is unaffected
+      });
+  })();
 </script>
 </body>
 </html>
