@@ -538,6 +538,66 @@
   .tool-icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
   .tool-name { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); }
 
+  /* ── AI LEVERAGE ── */
+  .ai-section { background: var(--dark3); }
+  .ai-intro {
+    font-size: 1.05rem; color: var(--text-muted); max-width: 780px;
+    line-height: 1.75; margin-bottom: 3rem;
+  }
+  .ai-intro strong { color: var(--accent); }
+  .ai-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .ai-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; padding: 1.75rem; position: relative; overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  .ai-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(108,59,255,0.2);
+    border-color: var(--primary-light);
+  }
+  .ai-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    border-radius: 20px 20px 0 0;
+  }
+  .ai-card.a1::before { background: linear-gradient(90deg, #0078d4, #50b0f0); }
+  .ai-card.a2::before { background: linear-gradient(90deg, #4285f4, #34a853); }
+  .ai-card.a3::before { background: linear-gradient(90deg, var(--primary), var(--accent)); }
+  .ai-card.a4::before { background: linear-gradient(90deg, var(--accent2), #ff9b7b); }
+  .ai-card-header {
+    display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1rem;
+  }
+  .ai-tool-badge {
+    padding: 0.3rem 0.8rem; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em;
+  }
+  .a1 .ai-tool-badge { background: rgba(0,120,212,0.15); color: #50b0f0; border: 1px solid rgba(0,120,212,0.3); }
+  .a2 .ai-tool-badge { background: rgba(66,133,244,0.15); color: #7bb3ff; border: 1px solid rgba(66,133,244,0.3); }
+  .a3 .ai-tool-badge { background: rgba(108,59,255,0.15); color: var(--primary-light); border: 1px solid rgba(108,59,255,0.3); }
+  .a4 .ai-tool-badge { background: rgba(255,107,107,0.15); color: #ff8f8f; border: 1px solid rgba(255,107,107,0.3); }
+  .ai-card-icon { font-size: 1.8rem; }
+  .ai-card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem; font-weight: 700; margin-bottom: 0.75rem;
+  }
+  .ai-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .ai-bullets li {
+    font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;
+    padding-left: 1.1rem; position: relative;
+  }
+  .ai-bullets li::before {
+    content: '▸'; position: absolute; left: 0;
+    font-size: 0.72rem; top: 0.1rem;
+  }
+  .a1 .ai-bullets li::before { color: #50b0f0; }
+  .a2 .ai-bullets li::before { color: #7bb3ff; }
+  .a3 .ai-bullets li::before { color: var(--primary-light); }
+  .a4 .ai-bullets li::before { color: #ff8f8f; }
+  .ai-bullets li strong { color: var(--text); }
+
   /* ── AWARDS ── */
   .awards { background: var(--dark2); }
   .awards-grid {
@@ -724,12 +784,13 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certs">Certifications</a></li>
+    <li><a href="#ai">AI Edge</a></li>
     <li><a href="#innovation">Innovation</a></li>
     <li><a href="#awards">Awards</a></li>
     <li><a href="#recs">Praise</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="mailto:siri.shruthi91@gmail.com" class="nav-cta">Hire Me →</a>
+  <a href="mailto:siri.shruthi91@gmail.com?subject=QA Automation Lead %2F Architect Role — Let's Connect&body=Hi Shruthi,%0A%0AI came across your portfolio and I'm impressed by your expertise. I'd love to connect about a QA Automation Lead or Architect opportunity.%0A%0ALooking forward to hearing from you!" class="nav-cta">Hire Me →</a>
 </nav>
 
 <!-- ── HERO ── -->
@@ -793,7 +854,7 @@
     </div>
 
     <div class="hero-actions">
-      <a href="mailto:siri.shruthi91@gmail.com" class="btn-primary">Let's Talk →</a>
+      <a href="mailto:siri.shruthi91@gmail.com?subject=QA Automation Lead %2F Architect Role — Let's Connect&body=Hi Shruthi,%0A%0AI came across your portfolio and I'm impressed by your expertise. I'd love to connect about a QA Automation Lead or Architect opportunity.%0A%0ALooking forward to hearing from you!" class="btn-primary">Let's Talk →</a>
       <a href="https://www.linkedin.com/in/shruthi-sirigineedi-a7820225/" target="_blank" class="btn-secondary">View LinkedIn</a>
     </div>
   </div>
@@ -929,7 +990,7 @@
       <div class="timeline-item">
         <div class="timeline-dot" style="background:var(--primary-light)"></div>
         <div class="tl-header">
-          <div class="tl-company">🩺 Pyramid Technology Solutions <span style="color:var(--text-muted);font-weight:400;font-size:0.85rem"> · Be The Match</span></div>
+          <div class="tl-company">🩺 Be The Match — National Marrow Donor Program <span style="color:var(--text-muted);font-weight:400;font-size:0.85rem"> · via Pyramid Technology Solutions</span></div>
           <div class="tl-period">Oct 2022 – July 2023</div>
         </div>
         <div class="tl-role">Test Automation Lead</div>
@@ -1122,6 +1183,76 @@
   </div>
 </section>
 
+<!-- ── AI LEVERAGE ── -->
+<section class="ai-section" id="ai">
+  <div class="container">
+    <div class="section-label">AI-Powered Testing</div>
+    <h2 class="section-title">How I Leverage <span>AI Every Day</span></h2>
+    <p class="ai-intro">
+      In today's testing landscape, AI isn't a buzzword — it's a force multiplier. I actively integrate <strong>GitHub Copilot, Google Gemini, and Agentic AI</strong> into my daily workflow to brainstorm smarter, script faster, and architect more resilient automation at enterprise scale.
+    </p>
+    <div class="ai-grid">
+
+      <div class="ai-card a1 fade-in">
+        <div class="ai-card-header">
+          <div class="ai-card-icon">🤖</div>
+          <div class="ai-tool-badge">GitHub Copilot</div>
+        </div>
+        <div class="ai-card-title">AI-Assisted Test Script Development</div>
+        <ul class="ai-bullets">
+          <li>Use Copilot to <strong>generate boilerplate Selenium/Java and Playwright test scripts</strong> instantly — cutting script authoring time by up to 60%.</li>
+          <li>Leverage inline suggestions for <strong>XPath and CSS selector optimization</strong>, data-driven test structures, and TestNG annotations.</li>
+          <li>Rely on Copilot to <strong>auto-complete Page Object Model classes</strong> and maintain consistent framework architecture across large codebases.</li>
+          <li>Use AI chat to <strong>debug failing test scripts</strong> — explaining stack traces, identifying flaky test patterns, and suggesting fixes in seconds.</li>
+        </ul>
+      </div>
+
+      <div class="ai-card a2 fade-in">
+        <div class="ai-card-header">
+          <div class="ai-card-icon">💎</div>
+          <div class="ai-tool-badge">Google Gemini</div>
+        </div>
+        <div class="ai-card-title">Brainstorming & Test Strategy</div>
+        <ul class="ai-bullets">
+          <li>Use Gemini to <strong>brainstorm edge cases and boundary conditions</strong> for complex Salesforce CPQ workflows and multi-step business flows.</li>
+          <li>Leverage conversational AI to <strong>translate business requirements into comprehensive test scenarios</strong> before writing a single line of code.</li>
+          <li>Use Gemini to <strong>generate BDD Gherkin feature files</strong> from plain-English requirement descriptions — accelerating BDD adoption across teams.</li>
+          <li>Rely on Gemini for <strong>risk-based test prioritization</strong> — identifying which flows to automate first based on business impact and change frequency.</li>
+        </ul>
+      </div>
+
+      <div class="ai-card a3 fade-in">
+        <div class="ai-card-header">
+          <div class="ai-card-icon">⚡</div>
+          <div class="ai-tool-badge">Agentic AI · AccelQ</div>
+        </div>
+        <div class="ai-card-title">Agentic AI in Enterprise Automation</div>
+        <ul class="ai-bullets">
+          <li>Pioneered the use of <strong>AccelQ's AI-driven autonomous test engine</strong> at Dynatrace — enabling self-healing tests that automatically adapt to UI changes without manual rework.</li>
+          <li>Leverage Agentic AI to <strong>auto-generate and maintain test cases</strong> based on application behavior patterns, drastically reducing framework maintenance overhead.</li>
+          <li>Utilize AccelQ's AI capabilities to <strong>predict test failures before execution</strong> — proactively fixing fragile selectors and unstable workflows.</li>
+          <li>Design <strong>AI-orchestrated regression pipelines</strong> where the agent decides test execution order, parallelization strategy, and failure triage — reducing human intervention in nightly runs.</li>
+        </ul>
+      </div>
+
+      <div class="ai-card a4 fade-in">
+        <div class="ai-card-header">
+          <div class="ai-card-icon">🧠</div>
+          <div class="ai-tool-badge">AI Strategy & Leadership</div>
+        </div>
+        <div class="ai-card-title">Driving AI Adoption Across Teams</div>
+        <ul class="ai-bullets">
+          <li><strong>Mentor teams on AI-assisted testing practices</strong> — from prompt engineering for test generation to integrating Copilot into CI/CD-aware development workflows.</li>
+          <li>Conduct <strong>AI tool evaluations and POCs</strong> — assessing Copilot, Gemini, and emerging Agentic AI platforms for fit, ROI, and enterprise scalability.</li>
+          <li>Champion the shift from <strong>manual test authoring to AI-augmented automation</strong> — reducing onboarding time for new automation contributors from weeks to days.</li>
+          <li>Actively follow <strong>Agentforce and LLM-driven testing trends</strong> — bringing forward-looking AI strategy into every QA framework design decision.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── CERTIFICATIONS ── -->
 <section class="certs" id="certs">
   <div class="container">
@@ -1221,7 +1352,7 @@
 
       <div class="company-card fade-in">
         <div class="company-logo" style="background:rgba(255,107,107,0.12);">🩺</div>
-        <div class="company-name">Pyramid Tech</div>
+        <div class="company-name">Be The Match</div>
         <div class="company-period">2022 – 2023</div>
         <div class="company-role">Test Automation Lead</div>
       </div>
@@ -1324,7 +1455,7 @@
         <div class="acclaim-icon">❤️</div>
         <div class="acclaim-title">Mission-Critical Quality</div>
         <div class="acclaim-desc">Built the automation framework for Be The Match (National Marrow Donor Program) — a healthcare application where defects have real consequences. Trusted to bring enterprise-grade quality to a life-saving mission.</div>
-        <div class="acclaim-source">Pyramid Technology · Be The Match</div>
+        <div class="acclaim-source">Be The Match · National Marrow Donor Program</div>
       </div>
 
       <div class="acclaim-card fade-in">
@@ -1516,7 +1647,7 @@
         Irving, TX 75039
       </div>
     </div>
-    <a href="mailto:siri.shruthi91@gmail.com?subject=Interested in hiring Shruthi Sirigineedi&body=Hi Shruthi, I came across your portfolio and would love to connect about a QA Automation opportunity." class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem;">
+    <a href="mailto:siri.shruthi91@gmail.com?subject=QA Automation Lead %2F Architect Role — Let's Connect&body=Hi Shruthi,%0A%0AI came across your portfolio and I'm impressed by your 14+ years of automation expertise. I'd love to connect about a QA Automation Lead or Architect opportunity at our organization.%0A%0ALooking forward to hearing from you!" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem;">
       Let's Build Something Great →
     </a>
   </div>
